@@ -1,0 +1,21 @@
+Guide
+
+imgage cropping "elem_#":{"x": "y":}
+  x = cropping left
+  y = cropping top
+  w = cropped sprite width
+  h = cropped sprite height
+
+matrix [3][0] = centre of the sprite leftright = cropX + |# rounded down|
+matrix [3][1] = centre of the sprite topbottom = cropY + |# rounded down|
+-# down right from the cropped area
++# up left from the cropped area
+
+1_2 hurtbox
+1_3 hitbox
+unk1: unused
+unk2: width left from centre
+unk3: height up from centre
+unk4: x offset +#right -#left
+unk5: y offset +#down -#up
+unk6: ?

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <title>AOCF boxes</title>
+</head>
+<body>
+  <div>
+    <canvas id="canvas"></canvas>
+  </div>
+
+<!-- CHARACTER SELECT -->
+  <div>
+    <label for="character">character</label>
+    <select id="character" onchange="updateBG()">
+      <option value="hijiri">Byakuren</option>
+      <option value="doremy">Doremy</option>
+      <option value="futo">Futo</option>
+      <option value="ichirin">Ichirin</option>
+      <option value="jyoon">joon</option>
+      <option value="kasen">Kasen</option>
+      <option value="koishi">Koishi</option>
+      <option value="kokoro">Kokoro</option>
+      <option value="mamizou">Mamizou</option>
+      <option value="marisa">Marisa</option>
+      <option value="miko">Miko</option>
+      <option value="mokou">Mokou</option>
+      <option value="nitori">Nitori</option>
+      <option value="reimu">Reimu</option>
+      <option value="reisen_udonge">Reisen</option>
+      <option value="sukuna_sinmyoumaru">Sukuna</option>
+      <option value="sumi_usami">Sumireko</option>
+      <option value="tenshi">Tenshi</option>
+      <option value="yukari">Yukari</option>
+    </select>
+    <label for="sprite">frame</label>
+    <input type="text" id="sprite" onchange="updateBG()">
+  </div>
+
+<!-- CROP/CENTRE -->
+  <div class="flexbox">
+    <form class="flexbox">
+      <fieldset style="width: 0px">
+        <legend>elem_#</legend>
+        <div class="flexbox">
+          <div>
+            <label>X:</label>
+            <input type="text" id="cropX" size="1"><br>
+            <label>Y:</label>
+            <input type="text" id="cropY" size="1"><br>
+          </div>
+        </div>
+      </fieldset>
+      <fieldset style="width: 0px">
+        <legend>matrix</legend>
+        <div class="flexbox">
+          <div>
+            <label>[3][0]:</label>
+            <input type="text" id="matrix30" size="1"><br>
+            <label>[3][1]:</label>
+            <input type="text" id="matrix31" size="1"><br>
+          </div>
+        </div>
+      </fieldset>
+    </form>
+
+<!-- BUTTONS -->
+    <div style="padding-top: 10px;" class="flexbox">
+      <!-- <button onclick="updateBG()">Frame</button> -->
+      <button class="button" onclick="draw()">Draw</button>
+      <button class="button" onclick="reset()">Reset</button>
+    </div>
+  </div>
+
+<!-- HURTBOX -->
+  <form id="hurtbox">
+    <fieldset style="width: 0px;">
+      <legend>Hurtbox:</legend>
+      <div class="flexbox">
+        <div>
+          <label>unk2:</label>
+          <input type="text" id="w1" size="1"><br>
+          <label>unk3:</label>
+          <input type="text" id="h1" size="1"><br>
+          <label>unk4:</label>
+          <input type="text" id="xOffset1" size="1"><br>
+          <label>unk5:</label>
+          <input type="text" id="yOffset1" size="1"><br>
+        </div>
+        <div>
+          <label>unk2:</label>
+          <input type="text" id="w2" size="1"><br>
+          <label>unk3:</label>
+          <input type="text" id="h2" size="1"><br>
+          <label>unk4:</label>
+          <input type="text" id="xOffset2" size="1"><br>
+          <label>unk5:</label>
+          <input type="text" id="yOffset2" size="1"><br>
+        </div>
+        <div>
+          <label>unk2:</label>
+          <input type="text" id="w3" size="1"><br>
+          <label>unk3:</label>
+          <input type="text" id="h3" size="1"><br>
+          <label>unk4:</label>
+          <input type="text" id="xOffset3" size="1"><br>
+          <label>unk5:</label>
+          <input type="text" id="yOffset3" size="1"><br>
+        </div>
+        <div>
+          <label>unk2:</label>
+          <input type="text" id="w4" size="1"><br>
+          <label>unk3:</label>
+          <input type="text" id="h4" size="1"><br>
+          <label>unk4:</label>
+          <input type="text" id="xOffset4" size="1"><br>
+          <label>unk5:</label>
+          <input type="text" id="yOffset4" size="1"><br>
+        </div>
+        <div>
+          <label>unk2:</label>
+          <input type="text" id="w5" size="1"><br>
+          <label>unk3:</label>
+          <input type="text" id="h5" size="1"><br>
+          <label>unk4:</label>
+          <input type="text" id="xOffset5" size="1"><br>
+          <label>unk5:</label>
+          <input type="text" id="yOffset5" size="1"><br>
+        </div>
+        <div>
+          <label>unk2:</label>
+          <input type="text" id="w6" size="1"><br>
+          <label>unk3:</label>
+          <input type="text" id="h6" size="1"><br>
+          <label>unk4:</label>
+          <input type="text" id="xOffset6" size="1"><br>
+          <label>unk5:</label>
+          <input type="text" id="yOffset6" size="1"><br>
+        </div>
+        <div>
+          <label>unk2:</label>
+          <input type="text" id="w7" size="1"><br>
+          <label>unk3:</label>
+          <input type="text" id="h7" size="1"><br>
+          <label>unk4:</label>
+          <input type="text" id="xOffset7" size="1"><br>
+          <label>unk5:</label>
+          <input type="text" id="yOffset7" size="1"><br>
+        </div>
+        <div>
+          <label>unk2:</label>
+          <input type="text" id="w8" size="1"><br>
+          <label>unk3:</label>
+          <input type="text" id="h8" size="1"><br>
+          <label>unk4:</label>
+          <input type="text" id="xOffset8" size="1"><br>
+          <label>unk5:</label>
+          <input type="text" id="yOffset8" size="1"><br>
+        </div>
+        <div>
+          <label>unk2:</label>
+          <input type="text" id="w9" size="1"><br>
+          <label>unk3:</label>
+          <input type="text" id="h9" size="1"><br>
+          <label>unk4:</label>
+          <input type="text" id="xOffset9" size="1"><br>
+          <label>unk5:</label>
+          <input type="text" id="yOffset9" size="1"><br>
+        </div>
+        <div>
+          <label>unk2:</label>
+          <input type="text" id="w10" size="1"><br>
+          <label>unk3:</label>
+          <input type="text" id="h10" size="1"><br>
+          <label>unk4:</label>
+          <input type="text" id="xOffset10" size="1"><br>
+          <label>unk5:</label>
+          <input type="text" id="yOffset10" size="1"><br>
+        </div>
+      </div>
+    </fieldset>
+  </form>
+
+<!-- HITBOX -->
+  <form id="hitbox">
+    <fieldset style="width: 0px;">
+      <legend>Hitbox:</legend>
+      <div class="flexbox">
+        <div>
+          <label>unk2:</label>
+          <input type="text" id="w11" size="1"><br>
+          <label>unk3:</label>
+          <input type="text" id="h11" size="1"><br>
+          <label>unk4:</label>
+          <input type="text" id="xOffset11" size="1"><br>
+          <label>unk5:</label>
+          <input type="text" id="yOffset11" size="1"><br>
+        </div>
+        <div>
+          <label>unk2:</label>
+          <input type="text" id="w12" size="1"><br>
+          <label>unk3:</label>
+          <input type="text" id="h12" size="1"><br>
+          <label>unk4:</label>
+          <input type="text" id="xOffset12" size="1"><br>
+          <label>unk5:</label>
+          <input type="text" id="yOffset12" size="1"><br>
+        </div>
+        <div>
+          <label>unk2:</label>
+          <input type="text" id="w13" size="1"><br>
+          <label>unk3:</label>
+          <input type="text" id="h13" size="1"><br>
+          <label>unk4:</label>
+          <input type="text" id="xOffset13" size="1"><br>
+          <label>unk5:</label>
+          <input type="text" id="yOffset13" size="1"><br>
+        </div>
+        <div>
+          <label>unk2:</label>
+          <input type="text" id="w14" size="1"><br>
+          <label>unk3:</label>
+          <input type="text" id="h14" size="1"><br>
+          <label>unk4:</label>
+          <input type="text" id="xOffset14" size="1"><br>
+          <label>unk5:</label>
+          <input type="text" id="yOffset14" size="1"><br>
+        </div>
+        <div>
+          <label>unk2:</label>
+          <input type="text" id="w15" size="1"><br>
+          <label>unk3:</label>
+          <input type="text" id="h15" size="1"><br>
+          <label>unk4:</label>
+          <input type="text" id="xOffset15" size="1"><br>
+          <label>unk5:</label>
+          <input type="text" id="yOffset15" size="1"><br>
+        </div>
+        <div>
+          <label>unk2:</label>
+          <input type="text" id="w16" size="1"><br>
+          <label>unk3:</label>
+          <input type="text" id="h16" size="1"><br>
+          <label>unk4:</label>
+          <input type="text" id="xOffset16" size="1"><br>
+          <label>unk5:</label>
+          <input type="text" id="yOffset16" size="1"><br>
+        </div>
+        <div>
+          <label>unk2:</label>
+          <input type="text" id="w17" size="1"><br>
+          <label>unk3:</label>
+          <input type="text" id="h17" size="1"><br>
+          <label>unk4:</label>
+          <input type="text" id="xOffset17" size="1"><br>
+          <label>unk5:</label>
+          <input type="text" id="yOffset17" size="1"><br>
+        </div>
+        <div>
+          <label>unk2:</label>
+          <input type="text" id="w18" size="1"><br>
+          <label>unk3:</label>
+          <input type="text" id="h18" size="1"><br>
+          <label>unk4:</label>
+          <input type="text" id="xOffset18" size="1"><br>
+          <label>unk5:</label>
+          <input type="text" id="yOffset18" size="1"><br>
+        </div>
+        <div>
+          <label>unk2:</label>
+          <input type="text" id="w19" size="1"><br>
+          <label>unk3:</label>
+          <input type="text" id="h19" size="1"><br>
+          <label>unk4:</label>
+          <input type="text" id="xOffset19" size="1"><br>
+          <label>unk5:</label>
+          <input type="text" id="yOffset19" size="1"><br>
+        </div>
+        <div>
+          <label>unk2:</label>
+          <input type="text" id="w20" size="1"><br>
+          <label>unk3:</label>
+          <input type="text" id="h20" size="1"><br>
+          <label>unk4:</label>
+          <input type="text" id="xOffset20" size="1"><br>
+          <label>unk5:</label>
+          <input type="text" id="yOffset20" size="1"><br>
+        </div>
+      </div>
+    </fieldset>
+  </form>
+
+  <script src="index.js"></script>
+</body>
+</html>
