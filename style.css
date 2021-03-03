@@ -3,6 +3,10 @@
   background-color: #888;
 }
 
+input[type=number]{
+  width: 50px;
+} 
+
 #canvas {
   border: 2px solid black;
   flex-shrink: 0;
@@ -14,7 +18,7 @@
 }
 
 .flexbox > div {
-  width: 95px;
+  width: 97px;
   text-align: right;
 }
 

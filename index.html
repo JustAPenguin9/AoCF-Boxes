@@ -14,8 +14,8 @@
 
 <!-- CHARACTER SELECT -->
   <div>
-    <label for="character">character</label>
-    <select id="character" onchange="updateBG()">
+    <label for="character">Character</label>
+    <select id="character" onchange="updateBG()" tabindex="1">
       <option value="hijiri">Byakuren</option>
       <option value="doremy">Doremy</option>
       <option value="futo">Futo</option>
@@ -36,8 +36,8 @@
       <option value="tenshi">Tenshi</option>
       <option value="yukari">Yukari</option>
     </select>
-    <label for="sprite">frame</label>
-    <input type="text" id="sprite" onchange="updateBG()">
+    <label for="sprite">Image Name</label>
+    <input type="text" id="sprite" onchange="updateBG()" tabindex="1">
   </div>
 
 <!-- CROP/CENTRE -->
@@ -48,9 +48,9 @@
         <div class="flexbox">
           <div>
             <label>X:</label>
-            <input type="text" id="cropX" size="1"><br>
+            <input type="number" step="0.5" id="cropX" size="1" tabindex="1"><br>
             <label>Y:</label>
-            <input type="text" id="cropY" size="1"><br>
+            <input type="number" step="0.5" id="cropY" size="1" tabindex="1"><br>
           </div>
         </div>
       </fieldset>
@@ -59,9 +59,9 @@
         <div class="flexbox">
           <div>
             <label>[3][0]:</label>
-            <input type="text" id="matrix30" size="1"><br>
+            <input type="number" step="0.5" id="matrix30" size="1" tabindex="1"><br>
             <label>[3][1]:</label>
-            <input type="text" id="matrix31" size="1"><br>
+            <input type="number" step="0.5" id="matrix31" size="1" tabindex="1"><br>
           </div>
         </div>
       </fieldset>
@@ -82,103 +82,103 @@
       <div class="flexbox">
         <div>
           <label>unk2:</label>
-          <input type="text" id="w1" size="1"><br>
+          <input type="number" step="0.5" id="w1" size="1" tabindex="1"><br>
           <label>unk3:</label>
-          <input type="text" id="h1" size="1"><br>
+          <input type="number" step="0.5" id="h1" size="1" tabindex="1"><br>
           <label>unk4:</label>
-          <input type="text" id="xOffset1" size="1"><br>
+          <input type="number" step="0.5" id="xOffset1" size="1" tabindex="1"><br>
           <label>unk5:</label>
-          <input type="text" id="yOffset1" size="1"><br>
+          <input type="number" step="0.5" id="yOffset1" size="1" tabindex="1"><br>
         </div>
         <div>
           <label>unk2:</label>
-          <input type="text" id="w2" size="1"><br>
+          <input type="number" step="0.5" id="w2" size="1" tabindex="1"><br>
           <label>unk3:</label>
-          <input type="text" id="h2" size="1"><br>
+          <input type="number" step="0.5" id="h2" size="1" tabindex="1"><br>
           <label>unk4:</label>
-          <input type="text" id="xOffset2" size="1"><br>
+          <input type="number" step="0.5" id="xOffset2" size="1" tabindex="1"><br>
           <label>unk5:</label>
-          <input type="text" id="yOffset2" size="1"><br>
+          <input type="number" step="0.5" id="yOffset2" size="1" tabindex="1"><br>
         </div>
         <div>
           <label>unk2:</label>
-          <input type="text" id="w3" size="1"><br>
+          <input type="number" step="0.5" id="w3" size="1" tabindex="1"><br>
           <label>unk3:</label>
-          <input type="text" id="h3" size="1"><br>
+          <input type="number" step="0.5" id="h3" size="1" tabindex="1"><br>
           <label>unk4:</label>
-          <input type="text" id="xOffset3" size="1"><br>
+          <input type="number" step="0.5" id="xOffset3" size="1" tabindex="1"><br>
           <label>unk5:</label>
-          <input type="text" id="yOffset3" size="1"><br>
+          <input type="number" step="0.5" id="yOffset3" size="1" tabindex="1"><br>
         </div>
         <div>
           <label>unk2:</label>
-          <input type="text" id="w4" size="1"><br>
+          <input type="number" step="0.5" id="w4" size="1" tabindex="1"><br>
           <label>unk3:</label>
-          <input type="text" id="h4" size="1"><br>
+          <input type="number" step="0.5" id="h4" size="1" tabindex="1"><br>
           <label>unk4:</label>
-          <input type="text" id="xOffset4" size="1"><br>
+          <input type="number" step="0.5" id="xOffset4" size="1" tabindex="1"><br>
           <label>unk5:</label>
-          <input type="text" id="yOffset4" size="1"><br>
+          <input type="number" step="0.5" id="yOffset4" size="1" tabindex="1"><br>
         </div>
         <div>
           <label>unk2:</label>
-          <input type="text" id="w5" size="1"><br>
+          <input type="number" step="0.5" id="w5" size="1" tabindex="1"><br>
           <label>unk3:</label>
-          <input type="text" id="h5" size="1"><br>
+          <input type="number" step="0.5" id="h5" size="1" tabindex="1"><br>
           <label>unk4:</label>
-          <input type="text" id="xOffset5" size="1"><br>
+          <input type="number" step="0.5" id="xOffset5" size="1" tabindex="1"><br>
           <label>unk5:</label>
-          <input type="text" id="yOffset5" size="1"><br>
+          <input type="number" step="0.5" id="yOffset5" size="1" tabindex="1"><br>
         </div>
         <div>
           <label>unk2:</label>
-          <input type="text" id="w6" size="1"><br>
+          <input type="number" step="0.5" id="w6" size="1" tabindex="1"><br>
           <label>unk3:</label>
-          <input type="text" id="h6" size="1"><br>
+          <input type="number" step="0.5" id="h6" size="1" tabindex="1"><br>
           <label>unk4:</label>
-          <input type="text" id="xOffset6" size="1"><br>
+          <input type="number" step="0.5" id="xOffset6" size="1" tabindex="1"><br>
           <label>unk5:</label>
-          <input type="text" id="yOffset6" size="1"><br>
+          <input type="number" step="0.5" id="yOffset6" size="1" tabindex="1"><br>
         </div>
         <div>
           <label>unk2:</label>
-          <input type="text" id="w7" size="1"><br>
+          <input type="number" step="0.5" id="w7" size="1" tabindex="1"><br>
           <label>unk3:</label>
-          <input type="text" id="h7" size="1"><br>
+          <input type="number" step="0.5" id="h7" size="1" tabindex="1"><br>
           <label>unk4:</label>
-          <input type="text" id="xOffset7" size="1"><br>
+          <input type="number" step="0.5" id="xOffset7" size="1" tabindex="1"><br>
           <label>unk5:</label>
-          <input type="text" id="yOffset7" size="1"><br>
+          <input type="number" step="0.5" id="yOffset7" size="1" tabindex="1"><br>
         </div>
         <div>
           <label>unk2:</label>
-          <input type="text" id="w8" size="1"><br>
+          <input type="number" step="0.5" id="w8" size="1" tabindex="1"><br>
           <label>unk3:</label>
-          <input type="text" id="h8" size="1"><br>
+          <input type="number" step="0.5" id="h8" size="1" tabindex="1"><br>
           <label>unk4:</label>
-          <input type="text" id="xOffset8" size="1"><br>
+          <input type="number" step="0.5" id="xOffset8" size="1" tabindex="1"><br>
           <label>unk5:</label>
-          <input type="text" id="yOffset8" size="1"><br>
+          <input type="number" step="0.5" id="yOffset8" size="1" tabindex="1"><br>
         </div>
         <div>
           <label>unk2:</label>
-          <input type="text" id="w9" size="1"><br>
+          <input type="number" step="0.5" id="w9" size="1" tabindex="1"><br>
           <label>unk3:</label>
-          <input type="text" id="h9" size="1"><br>
+          <input type="number" step="0.5" id="h9" size="1" tabindex="1"><br>
           <label>unk4:</label>
-          <input type="text" id="xOffset9" size="1"><br>
+          <input type="number" step="0.5" id="xOffset9" size="1" tabindex="1"><br>
           <label>unk5:</label>
-          <input type="text" id="yOffset9" size="1"><br>
+          <input type="number" step="0.5" id="yOffset9" size="1" tabindex="1"><br>
         </div>
         <div>
           <label>unk2:</label>
-          <input type="text" id="w10" size="1"><br>
+          <input type="number" step="0.5" id="w10" size="1" tabindex="1"><br>
           <label>unk3:</label>
-          <input type="text" id="h10" size="1"><br>
+          <input type="number" step="0.5" id="h10" size="1" tabindex="1"><br>
           <label>unk4:</label>
-          <input type="text" id="xOffset10" size="1"><br>
+          <input type="number" step="0.5" id="xOffset10" size="1" tabindex="1"><br>
           <label>unk5:</label>
-          <input type="text" id="yOffset10" size="1"><br>
+          <input type="number" step="0.5" id="yOffset10" size="1" tabindex="1"><br>
         </div>
       </div>
     </fieldset>
@@ -191,103 +191,103 @@
       <div class="flexbox">
         <div>
           <label>unk2:</label>
-          <input type="text" id="w11" size="1"><br>
+          <input type="number" step="0.5" id="w11" size="1" tabindex="1"><br>
           <label>unk3:</label>
-          <input type="text" id="h11" size="1"><br>
+          <input type="number" step="0.5" id="h11" size="1" tabindex="1"><br>
           <label>unk4:</label>
-          <input type="text" id="xOffset11" size="1"><br>
+          <input type="number" step="0.5" id="xOffset11" size="1" tabindex="1"><br>
           <label>unk5:</label>
-          <input type="text" id="yOffset11" size="1"><br>
+          <input type="number" step="0.5" id="yOffset11" size="1" tabindex="1"><br>
         </div>
         <div>
           <label>unk2:</label>
-          <input type="text" id="w12" size="1"><br>
+          <input type="number" step="0.5" id="w12" size="1" tabindex="1"><br>
           <label>unk3:</label>
-          <input type="text" id="h12" size="1"><br>
+          <input type="number" step="0.5" id="h12" size="1" tabindex="1"><br>
           <label>unk4:</label>
-          <input type="text" id="xOffset12" size="1"><br>
+          <input type="number" step="0.5" id="xOffset12" size="1" tabindex="1"><br>
           <label>unk5:</label>
-          <input type="text" id="yOffset12" size="1"><br>
+          <input type="number" step="0.5" id="yOffset12" size="1" tabindex="1"><br>
         </div>
         <div>
           <label>unk2:</label>
-          <input type="text" id="w13" size="1"><br>
+          <input type="number" step="0.5" id="w13" size="1" tabindex="1"><br>
           <label>unk3:</label>
-          <input type="text" id="h13" size="1"><br>
+          <input type="number" step="0.5" id="h13" size="1" tabindex="1"><br>
           <label>unk4:</label>
-          <input type="text" id="xOffset13" size="1"><br>
+          <input type="number" step="0.5" id="xOffset13" size="1" tabindex="1"><br>
           <label>unk5:</label>
-          <input type="text" id="yOffset13" size="1"><br>
+          <input type="number" step="0.5" id="yOffset13" size="1" tabindex="1"><br>
         </div>
         <div>
           <label>unk2:</label>
-          <input type="text" id="w14" size="1"><br>
+          <input type="number" step="0.5" id="w14" size="1" tabindex="1"><br>
           <label>unk3:</label>
-          <input type="text" id="h14" size="1"><br>
+          <input type="number" step="0.5" id="h14" size="1" tabindex="1"><br>
           <label>unk4:</label>
-          <input type="text" id="xOffset14" size="1"><br>
+          <input type="number" step="0.5" id="xOffset14" size="1" tabindex="1"><br>
           <label>unk5:</label>
-          <input type="text" id="yOffset14" size="1"><br>
+          <input type="number" step="0.5" id="yOffset14" size="1" tabindex="1"><br>
         </div>
         <div>
           <label>unk2:</label>
-          <input type="text" id="w15" size="1"><br>
+          <input type="number" step="0.5" id="w15" size="1" tabindex="1"><br>
           <label>unk3:</label>
-          <input type="text" id="h15" size="1"><br>
+          <input type="number" step="0.5" id="h15" size="1" tabindex="1"><br>
           <label>unk4:</label>
-          <input type="text" id="xOffset15" size="1"><br>
+          <input type="number" step="0.5" id="xOffset15" size="1" tabindex="1"><br>
           <label>unk5:</label>
-          <input type="text" id="yOffset15" size="1"><br>
+          <input type="number" step="0.5" id="yOffset15" size="1" tabindex="1"><br>
         </div>
         <div>
           <label>unk2:</label>
-          <input type="text" id="w16" size="1"><br>
+          <input type="number" step="0.5" id="w16" size="1" tabindex="1"><br>
           <label>unk3:</label>
-          <input type="text" id="h16" size="1"><br>
+          <input type="number" step="0.5" id="h16" size="1" tabindex="1"><br>
           <label>unk4:</label>
-          <input type="text" id="xOffset16" size="1"><br>
+          <input type="number" step="0.5" id="xOffset16" size="1" tabindex="1"><br>
           <label>unk5:</label>
-          <input type="text" id="yOffset16" size="1"><br>
+          <input type="number" step="0.5" id="yOffset16" size="1" tabindex="1"><br>
         </div>
         <div>
           <label>unk2:</label>
-          <input type="text" id="w17" size="1"><br>
+          <input type="number" step="0.5" id="w17" size="1" tabindex="1"><br>
           <label>unk3:</label>
-          <input type="text" id="h17" size="1"><br>
+          <input type="number" step="0.5" id="h17" size="1" tabindex="1"><br>
           <label>unk4:</label>
-          <input type="text" id="xOffset17" size="1"><br>
+          <input type="number" step="0.5" id="xOffset17" size="1" tabindex="1"><br>
           <label>unk5:</label>
-          <input type="text" id="yOffset17" size="1"><br>
+          <input type="number" step="0.5" id="yOffset17" size="1" tabindex="1"><br>
         </div>
         <div>
           <label>unk2:</label>
-          <input type="text" id="w18" size="1"><br>
+          <input type="number" step="0.5" id="w18" size="1" tabindex="1"><br>
           <label>unk3:</label>
-          <input type="text" id="h18" size="1"><br>
+          <input type="number" step="0.5" id="h18" size="1" tabindex="1"><br>
           <label>unk4:</label>
-          <input type="text" id="xOffset18" size="1"><br>
+          <input type="number" step="0.5" id="xOffset18" size="1" tabindex="1"><br>
           <label>unk5:</label>
-          <input type="text" id="yOffset18" size="1"><br>
+          <input type="number" step="0.5" id="yOffset18" size="1" tabindex="1"><br>
         </div>
         <div>
           <label>unk2:</label>
-          <input type="text" id="w19" size="1"><br>
+          <input type="number" step="0.5" id="w19" size="1" tabindex="1"><br>
           <label>unk3:</label>
-          <input type="text" id="h19" size="1"><br>
+          <input type="number" step="0.5" id="h19" size="1" tabindex="1"><br>
           <label>unk4:</label>
-          <input type="text" id="xOffset19" size="1"><br>
+          <input type="number" step="0.5" id="xOffset19" size="1" tabindex="1"><br>
           <label>unk5:</label>
-          <input type="text" id="yOffset19" size="1"><br>
+          <input type="number" step="0.5" id="yOffset19" size="1" tabindex="1"><br>
         </div>
         <div>
           <label>unk2:</label>
-          <input type="text" id="w20" size="1"><br>
+          <input type="number" step="0.5" id="w20" size="1" tabindex="1"><br>
           <label>unk3:</label>
-          <input type="text" id="h20" size="1"><br>
+          <input type="number" step="0.5" id="h20" size="1" tabindex="1"><br>
           <label>unk4:</label>
-          <input type="text" id="xOffset20" size="1"><br>
+          <input type="number" step="0.5" id="xOffset20" size="1" tabindex="1"><br>
           <label>unk5:</label>
-          <input type="text" id="yOffset20" size="1"><br>
+          <input type="number" step="0.5" id="yOffset20" size="1" tabindex="1"><br>
         </div>
       </div>
     </fieldset>
