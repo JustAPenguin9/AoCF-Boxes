@@ -8,22 +8,21 @@ function updateBG() {
   if(sprite !== "") {
     var background = new Image();
     background.src = `../${character.trim()}/${sprite.trim()}.png`
-    background.onload = function() {
+    background.onload = () => {
       canvas.width = background.width;
       canvas.height = background.height;
       c.drawImage(background,0,0,);
     }
 
-    console.log(character)
-    console.log(sprite)
+    console.log(character + " || " + sprite)
     console.log(background.src)
-    console.log("")
   } else {
     console.log("no image source")
   }
 }
 
-function reset() {
+///CLEAR
+function clear() {
   c.beginPath();
   c.clearRect(0, 0, canvas.width, canvas.height);
   c.stroke();
@@ -31,6 +30,21 @@ function reset() {
   updateBG();
 }
 
+function clearHurt() {
+  clear();
+  setTimeout(() => {
+    drawHit();
+  }, 10)
+}
+
+function clearHit() {
+  clear();
+  setTimeout(() => {
+    drawHurt()
+  }, 10)
+}
+
+///DRAW
 function drawRect(colour, width, height, xOffset, yOffset) {
   var cropX = parseInt(document.getElementById("cropX").value);
   var cropY = parseInt(document.getElementById("cropY").value);
@@ -46,11 +60,9 @@ function drawRect(colour, width, height, xOffset, yOffset) {
   parseInt(height) * 2
   )
   c.stroke();
-  console.log("drew box")
 }
 
-function draw() {
-  //hurtboxes
+function drawHurt() {
   drawRect(
     "#00ff00",
     document.getElementById("w1").value,
@@ -100,29 +112,10 @@ function draw() {
     document.getElementById("xOffset7").value,
     document.getElementById("yOffset7").value
   )
-  drawRect(
-    "#00ff00",
-    document.getElementById("w8").value,
-    document.getElementById("h8").value,
-    document.getElementById("xOffset8").value,
-    document.getElementById("yOffset8").value
-  )
-  drawRect(
-    "#00ff00",
-    document.getElementById("w9").value,
-    document.getElementById("h9").value,
-    document.getElementById("xOffset9").value,
-    document.getElementById("yOffset9").value
-  )
-  drawRect(
-    "#00ff00",
-    document.getElementById("w10").value,
-    document.getElementById("h10").value,
-    document.getElementById("xOffset10").value,
-    document.getElementById("yOffset10").value
-  )
+  console.log("Drew hurtboxes");
+}
 
-  //hitboxes
+function drawHit() {
   drawRect(
     "#ff0000",
     document.getElementById("w11").value,
@@ -172,25 +165,98 @@ function draw() {
     document.getElementById("xOffset17").value,
     document.getElementById("yOffset17").value
   )
-  drawRect(
-    "#ff0000",
-    document.getElementById("w18").value,
-    document.getElementById("h18").value,
-    document.getElementById("xOffset18").value,
-    document.getElementById("yOffset18").value
-  )
-  drawRect(
-    "#ff0000",
-    document.getElementById("w19").value,
-    document.getElementById("h19").value,
-    document.getElementById("xOffset19").value,
-    document.getElementById("yOffset19").value
-  )
-  drawRect(
-    "#ff0000",
-    document.getElementById("w20").value,
-    document.getElementById("h20").value,
-    document.getElementById("xOffset20").value,
-    document.getElementById("yOffset20").value
-  )
+  console.log("Drew hitboxes");
+}
+
+function draw() {
+  drawHit(); 
+  drawHurt();
+}
+
+document.addEventListener("keyup", (e) => {
+  if (e.code == "Enter") {
+    draw();
+  }
+})
+
+///RESET
+function resetHurt(){
+  document.getElementById("w1").value = null;
+  document.getElementById("h1").value = null;
+  document.getElementById("xOffset1").value = null;
+  document.getElementById("yOffset1").value = null;
+
+  document.getElementById("w2").value = null;
+  document.getElementById("h2").value = null;
+  document.getElementById("xOffset2").value = null;
+  document.getElementById("yOffset2").value = null;
+
+  document.getElementById("w3").value = null;
+  document.getElementById("h3").value = null;
+  document.getElementById("xOffset3").value = null;
+  document.getElementById("yOffset3").value = null;
+
+  document.getElementById("w4").value = null;
+  document.getElementById("h4").value = null;
+  document.getElementById("xOffset4").value = null;
+  document.getElementById("yOffset4").value = null;
+
+  document.getElementById("w5").value = null;
+  document.getElementById("h5").value = null;
+  document.getElementById("xOffset5").value = null;
+  document.getElementById("yOffset5").value = null;
+
+  document.getElementById("w6").value = null;
+  document.getElementById("h6").value = null;
+  document.getElementById("xOffset6").value = null;
+  document.getElementById("yOffset6").value = null;
+
+  document.getElementById("w7").value = null;
+  document.getElementById("h7").value = null;
+  document.getElementById("xOffset7").value = null;
+  document.getElementById("yOffset7").value = null;
+
+  console.log("Reset Hurt");
+}
+
+function resetHit() {
+  document.getElementById("w11").value = null;
+  document.getElementById("h11").value = null;
+  document.getElementById("xOffset11").value = null;
+  document.getElementById("yOffset11").value = null;
+
+  document.getElementById("w12").value = null;
+  document.getElementById("h12").value = null;
+  document.getElementById("xOffset12").value = null;
+  document.getElementById("yOffset12").value = null;
+
+  document.getElementById("w13").value = null;
+  document.getElementById("h13").value = null;
+  document.getElementById("xOffset13").value = null;
+  document.getElementById("yOffset13").value = null;
+
+  document.getElementById("w14").value = null;
+  document.getElementById("h14").value = null;
+  document.getElementById("xOffset14").value = null;
+  document.getElementById("yOffset14").value = null;
+
+  document.getElementById("w15").value = null;
+  document.getElementById("h15").value = null;
+  document.getElementById("xOffset15").value = null;
+  document.getElementById("yOffset15").value = null;
+
+  document.getElementById("w16").value = null;
+  document.getElementById("h16").value = null;
+  document.getElementById("xOffset16").value = null;
+  document.getElementById("yOffset16").value = null;
+
+  document.getElementById("w17").value = null;
+  document.getElementById("h17").value = null;
+  document.getElementById("xOffset17").value = null;
+  document.getElementById("yOffset17").value = null;
+}
+
+function reset() {
+  resetHurt();
+  resetHit();
 }
