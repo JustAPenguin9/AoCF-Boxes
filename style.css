@@ -5,7 +5,7 @@
 
 input[type=number]{
   width: 70px;
-} 
+}
 
 #canvas {
   border: 2px solid black;
@@ -18,7 +18,7 @@ input[type=number]{
 }
 
 .flexbox > div {
-  width: 117px;
+  width: 120px;
   text-align: right;
 }
 

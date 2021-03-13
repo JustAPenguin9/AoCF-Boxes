@@ -75,17 +75,99 @@
         <div>
           <button class="button" onclick="drawHurt()">Draw Hurt</button>
           <button class="button" onclick="drawHit()">Draw Hit</button>
+          <button class="button" onclick="drawColl()">Draw Collision</button>
         </div>
         <div>
           <button class="button" onclick="clearHurt()">Clear Hurt</button>
           <button class="button" onclick="clearHit()">Clear Hit</button>
+          <button class="button" onclick="clearColl()">Clear Collision</button>
         </div>
         <div>
           <button class="button" onclick="resetHurt()">Reset Hurt</button>
           <button class="button" onclick="resetHit()">Reset Hit</button>
+          <button class="button" onclick="resetColl()">Reset Collision</button>
         </div>
       </div>
     </div>
+
+<!-- COLLISIONBOX -->
+    <form id="collisionbox">
+      <fieldset style="width: 0px;">
+        <legend>Collisionbox:</legend>
+        <div class="flexbox">
+          <div>
+            <label>unk2:</label>
+            <input type="number" step="0.5" id="w21" size="1" tabindex="1"><br>
+            <label>unk3:</label>
+            <input type="number" step="0.5" id="h21" size="1" tabindex="1"><br>
+            <label>unk4:</label>
+            <input type="number" step="0.5" id="xOffset1" size="1" tabindex="1"><br>
+            <label>unk5:</label>
+            <input type="number" step="0.5" id="yOffset1" size="1" tabindex="1"><br>
+          </div>
+          <div>
+            <label>unk2:</label>
+            <input type="number" step="0.5" id="w22" size="1" tabindex="1"><br>
+            <label>unk3:</label>
+            <input type="number" step="0.5" id="h22" size="1" tabindex="1"><br>
+            <label>unk4:</label>
+            <input type="number" step="0.5" id="xOffset22" size="1" tabindex="1"><br>
+            <label>unk5:</label>
+            <input type="number" step="0.5" id="yOffset22" size="1" tabindex="1"><br>
+          </div>
+          <div>
+            <label>unk2:</label>
+            <input type="number" step="0.5" id="w23" size="1" tabindex="1"><br>
+            <label>unk3:</label>
+            <input type="number" step="0.5" id="h23" size="1" tabindex="1"><br>
+            <label>unk4:</label>
+            <input type="number" step="0.5" id="xOffset23" size="1" tabindex="1"><br>
+            <label>unk5:</label>
+            <input type="number" step="0.5" id="yOffset23" size="1" tabindex="1"><br>
+          </div>
+          <div>
+            <label>unk2:</label>
+            <input type="number" step="0.5" id="w24" size="1" tabindex="1"><br>
+            <label>unk3:</label>
+            <input type="number" step="0.5" id="h24" size="1" tabindex="1"><br>
+            <label>unk4:</label>
+            <input type="number" step="0.5" id="xOffset24" size="1" tabindex="1"><br>
+            <label>unk5:</label>
+            <input type="number" step="0.5" id="yOffset24" size="1" tabindex="1"><br>
+          </div>
+          <div>
+            <label>unk2:</label>
+            <input type="number" step="0.5" id="w25" size="1" tabindex="1"><br>
+            <label>unk3:</label>
+            <input type="number" step="0.5" id="h25" size="1" tabindex="1"><br>
+            <label>unk4:</label>
+            <input type="number" step="0.5" id="xOffset25" size="1" tabindex="1"><br>
+            <label>unk5:</label>
+            <input type="number" step="0.5" id="yOffset25" size="1" tabindex="1"><br>
+          </div>
+          <div>
+            <label>unk2:</label>
+            <input type="number" step="0.5" id="w26" size="1" tabindex="1"><br>
+            <label>unk3:</label>
+            <input type="number" step="0.5" id="h26" size="1" tabindex="1"><br>
+            <label>unk4:</label>
+            <input type="number" step="0.5" id="xOffset26" size="1" tabindex="1"><br>
+            <label>unk5:</label>
+            <input type="number" step="0.5" id="yOffset26" size="1" tabindex="1"><br>
+          </div>
+          <div>
+            <label>unk2:</label>
+            <input type="number" step="0.5" id="w27" size="1" tabindex="1"><br>
+            <label>unk3:</label>
+            <input type="number" step="0.5" id="h27" size="1" tabindex="1"><br>
+            <label>unk4:</label>
+            <input type="number" step="0.5" id="xOffset27" size="1" tabindex="1"><br>
+            <label>unk5:</label>
+            <input type="number" step="0.5" id="yOffset27" size="1" tabindex="1"><br>
+          </div>
+        </div>
+      </fieldset>
+    </form>
 
 <!-- HURTBOX -->
   <form id="hurtbox">

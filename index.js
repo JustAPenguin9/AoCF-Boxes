@@ -30,9 +30,18 @@ function clear() {
   updateBG();
 }
 
+function clearColl() {
+  clear();
+  setTimeout(() => {
+    drawHurt();
+    drawHit();
+  })
+}
+
 function clearHurt() {
   clear();
   setTimeout(() => {
+    drawColl();
     drawHit();
   }, 10)
 }
@@ -40,7 +49,8 @@ function clearHurt() {
 function clearHit() {
   clear();
   setTimeout(() => {
-    drawHurt()
+    drawColl();
+    drawHurt();
   }, 10)
 }
 
@@ -54,12 +64,71 @@ function drawRect(colour, width, height, xOffset, yOffset) {
   c.beginPath();
   c.strokeStyle = colour;
   c.rect(
-  cropX - matrix30 - parseInt(width) + parseInt(xOffset) + 1.5, 
-  cropY - matrix31 - parseInt(height) + parseInt(yOffset) + 0.5, 
-  parseInt(width) * 2 - 1, 
+  cropX - matrix30 - parseInt(width) + parseInt(xOffset) + 1.5,
+  cropY - matrix31 - parseInt(height) + parseInt(yOffset) + 0.5,
+  parseInt(width) * 2 - 1,
   parseInt(height) * 2
   )
   c.stroke();
+}
+
+/*****************************
+*  21 - 27  Collision boxes  *
+*  1 - 7    Hurt boxes       *
+*  11 - 17  Hit boxes        *
+*****************************/
+
+function drawColl() {
+  drawRect(
+    "#0000ff",
+    document.getElementById("w21").value,
+    document.getElementById("h21").value,
+    document.getElementById("xOffset21").value,
+    document.getElementById("yOffset21").value
+  )
+  drawRect(
+    "#0000ff",
+    document.getElementById("w22").value,
+    document.getElementById("h22").value,
+    document.getElementById("xOffset22").value,
+    document.getElementById("yOffset22").value
+  )
+  drawRect(
+    "#0000ff",
+    document.getElementById("w23").value,
+    document.getElementById("h23").value,
+    document.getElementById("xOffset23").value,
+    document.getElementById("yOffset23").value
+  )
+  drawRect(
+    "#0000ff",
+    document.getElementById("w24").value,
+    document.getElementById("h24").value,
+    document.getElementById("xOffset24").value,
+    document.getElementById("yOffset24").value
+  )
+  drawRect(
+    "#0000ff",
+    document.getElementById("w25").value,
+    document.getElementById("h25").value,
+    document.getElementById("xOffset25").value,
+    document.getElementById("yOffset25").value
+  )
+  drawRect(
+    "#0000ff",
+    document.getElementById("w26").value,
+    document.getElementById("h26").value,
+    document.getElementById("xOffset26").value,
+    document.getElementById("yOffset26").value
+  )
+  drawRect(
+    "#0000ff",
+    document.getElementById("w27").value,
+    document.getElementById("h27").value,
+    document.getElementById("xOffset27").value,
+    document.getElementById("yOffset27").value
+  )
+  console.log("Drew collisionboxes");
 }
 
 function drawHurt() {
@@ -169,8 +238,9 @@ function drawHit() {
 }
 
 function draw() {
-  drawHit(); 
+  drawHit();
   drawHurt();
+  drawColl()
 }
 
 document.addEventListener("keyup", (e) => {
@@ -180,7 +250,46 @@ document.addEventListener("keyup", (e) => {
 })
 
 ///RESET
-function resetHurt(){
+function resetColl() {
+  document.getElementById("w21").value = null;
+  document.getElementById("h21").value = null;
+  document.getElementById("xOffset21").value = null;
+  document.getElementById("yOffset21").value = null;
+
+  document.getElementById("w22").value = null;
+  document.getElementById("h22").value = null;
+  document.getElementById("xOffset22").value = null;
+  document.getElementById("yOffset22").value = null;
+
+  document.getElementById("w23").value = null;
+  document.getElementById("h23").value = null;
+  document.getElementById("xOffset23").value = null;
+  document.getElementById("yOffset23").value = null;
+
+  document.getElementById("w24").value = null;
+  document.getElementById("h24").value = null;
+  document.getElementById("xOffset24").value = null;
+  document.getElementById("yOffset24").value = null;
+
+  document.getElementById("w25").value = null;
+  document.getElementById("h25").value = null;
+  document.getElementById("xOffset25").value = null;
+  document.getElementById("yOffset25").value = null;
+
+  document.getElementById("w26").value = null;
+  document.getElementById("h26").value = null;
+  document.getElementById("xOffset26").value = null;
+  document.getElementById("yOffset26").value = null;
+
+  document.getElementById("w27").value = null;
+  document.getElementById("h27").value = null;
+  document.getElementById("xOffset27").value = null;
+  document.getElementById("yOffset27").value = null;
+
+  console.log("Reset Collision");
+}
+
+function resetHurt() {
   document.getElementById("w1").value = null;
   document.getElementById("h1").value = null;
   document.getElementById("xOffset1").value = null;
@@ -254,9 +363,12 @@ function resetHit() {
   document.getElementById("h17").value = null;
   document.getElementById("xOffset17").value = null;
   document.getElementById("yOffset17").value = null;
+
+  console.log("Reset Hit");
 }
 
 function reset() {
   resetHurt();
   resetHit();
+  resetColl();
 }
