@@ -21,6 +21,44 @@ function updateBG() {
   }
 }
 
+//SHOW HIDE
+var collisionboxSH = false;
+var hurtboxSH = true;
+var hitboxSH = true;
+
+function collSH() {
+  switch(collisionboxSH) {
+    case true:
+      document.getElementById("collisionbox").style.display = "none";
+      return collisionboxSH = false;
+    case false:
+      document.getElementById("collisionbox").style.display = "inline";
+      return collisionboxSH = true;
+  }
+}
+
+function hurtSH() {
+  switch(hurtboxSH) {
+    case true:
+      document.getElementById("hurtbox").style.display = "none";
+      return hurtboxSH = false;
+    case false:
+      document.getElementById("hurtbox").style.display = "inline";
+      return hurtboxSH = true;
+  }
+}
+
+function hitSH() {
+  switch(hitboxSH) {
+    case true:
+      document.getElementById("hitbox").style.display = "none";
+      return hitboxSH = false;
+    case false:
+      document.getElementById("hitbox").style.display = "inline";
+      return hitboxSH = true;
+  }
+}
+
 ///CLEAR
 function clear() {
   c.beginPath();

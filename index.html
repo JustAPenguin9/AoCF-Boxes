@@ -68,10 +68,29 @@
           </div>
         </div>
       </fieldset>
+<!-- SHOW HIDE -->
+      <fieldset>
+        <legend>Show</legend>
+        <div class="flexboxL">
+          <div>
+            <input type="checkbox" id="collboxSH" value="show" onchange="collSH()">
+            <label for="collboxSH">Collisionbox</label> <br>
+            <input type="checkbox" id="hurtboxSH" value="show" onchange="hurtSH()" checked>
+            <label for="hurtboxSH">Hurtbox</label> <br>
+            <input type="checkbox" id="hitboxSH" value="show" onchange="hitSH()" checked>
+            <label for="hitboxSH">Hitbox</label>
+          </div>
+        </div>
+      </fieldset>
     </form>
 
 <!-- BUTTONS -->
       <div class="flexbox">
+        <div>
+          <button class="button" onclick="resetHurt()">Reset Hurt</button>
+          <button class="button" onclick="resetHit()">Reset Hit</button>
+          <button class="button" onclick="resetColl()">Reset Collision</button>
+        </div>
         <div>
           <button class="button" onclick="drawHurt()">Draw Hurt</button>
           <button class="button" onclick="drawHit()">Draw Hit</button>
@@ -82,16 +101,11 @@
           <button class="button" onclick="clearHit()">Clear Hit</button>
           <button class="button" onclick="clearColl()">Clear Collision</button>
         </div>
-        <div>
-          <button class="button" onclick="resetHurt()">Reset Hurt</button>
-          <button class="button" onclick="resetHit()">Reset Hit</button>
-          <button class="button" onclick="resetColl()">Reset Collision</button>
-        </div>
       </div>
     </div>
 
 <!-- COLLISIONBOX -->
-    <form id="collisionbox">
+    <form id="collisionbox" style="display: none;">
       <fieldset style="width: 0px;">
         <legend>Collisionbox:</legend>
         <div class="flexbox">
@@ -101,9 +115,9 @@
             <label>unk3:</label>
             <input type="number" step="0.5" id="h21" size="1" tabindex="1"><br>
             <label>unk4:</label>
-            <input type="number" step="0.5" id="xOffset1" size="1" tabindex="1"><br>
+            <input type="number" step="0.5" id="xOffset21" size="1" tabindex="1"><br>
             <label>unk5:</label>
-            <input type="number" step="0.5" id="yOffset1" size="1" tabindex="1"><br>
+            <input type="number" step="0.5" id="yOffset21" size="1" tabindex="1"><br>
           </div>
           <div>
             <label>unk2:</label>
