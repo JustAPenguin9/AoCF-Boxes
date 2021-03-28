@@ -17,6 +17,20 @@ input[type=number]{
   flex-direction: row;
 }
 
+.flexboxButBigger {
+  display: flex;
+  flex-direction: row;
+  width: 129px;
+  text-align: right;
+}
+
+.flexboxButSmaller {
+  display: flex;
+  flex-direction: row;
+  width: 90px;
+  text-align: right;
+}
+
 .flexbox > div {
   width: 120px;
   text-align: right;

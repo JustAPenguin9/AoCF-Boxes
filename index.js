@@ -9,9 +9,9 @@ function updateBG() {
     var background = new Image();
     background.src = `../${character.trim()}/${sprite.trim()}.png`
     background.onload = () => {
-      canvas.width = background.width;
-      canvas.height = background.height;
-      c.drawImage(background,0,0,);
+      canvas.width = background.width + parseInt(document.getElementById("ESR").value) + parseInt(document.getElementById("ESL").value);
+      canvas.height = background.height + parseInt(document.getElementById("ESB").value) + parseInt(document.getElementById("EST").value);
+      c.drawImage(background, parseInt(document.getElementById("ESL").value), parseInt(document.getElementById("EST").value));
     }
 
     console.log(character + " || " + sprite)
@@ -25,6 +25,7 @@ function updateBG() {
 var collisionboxSH = false;
 var hurtboxSH = true;
 var hitboxSH = true;
+var extraSpace = false;
 
 function collSH() {
   switch(collisionboxSH) {
@@ -56,6 +57,17 @@ function hitSH() {
     case false:
       document.getElementById("hitbox").style.display = "inline";
       return hitboxSH = true;
+  }
+}
+
+function exSpace() {
+  switch(extraSpace) {
+    case true:
+      document.getElementById("extraSpace").style.display = "none";
+      return extraSpace = false;
+    case false:
+      document.getElementById("extraSpace").style.display = "inline";
+      return extraSpace = true;
   }
 }
 
@@ -102,8 +114,8 @@ function drawRect(colour, width, height, xOffset, yOffset) {
   c.beginPath();
   c.strokeStyle = colour;
   c.rect(
-  cropX - matrix30 - parseInt(width) + parseInt(xOffset) + 1.5,
-  cropY - matrix31 - parseInt(height) + parseInt(yOffset) + 0.5,
+  cropX - matrix30 - parseInt(width) + parseInt(xOffset) + 1.5 + parseInt(document.getElementById("ESL").value),
+  cropY - matrix31 - parseInt(height) + parseInt(yOffset) + 0.5 + parseInt(document.getElementById("EST").value),
   parseInt(width) * 2 - 1,
   parseInt(height) * 2
   )
@@ -112,7 +124,7 @@ function drawRect(colour, width, height, xOffset, yOffset) {
 
 /*****************************
 *  21 - 27  Collision boxes  *
-*  1 - 7    Hurt boxes       *
+*  1  - 7   Hurt boxes       *
 *  11 - 17  Hit boxes        *
 *****************************/
 

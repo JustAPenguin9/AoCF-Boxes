@@ -48,7 +48,7 @@
     <form class="flexbox">
       <fieldset style="width: 0px">
         <legend>elem_#</legend>
-        <div class="flexbox">
+        <div class="flexboxButSmaller">
           <div>
             <label>X:</label>
             <input type="number" step="0.5" id="cropX" size="1" tabindex="1"><br>
@@ -73,36 +73,56 @@
         <legend>Show</legend>
         <div class="flexboxL">
           <div>
-            <input type="checkbox" id="collboxSH" value="show" onchange="collSH()">
+            <input type="checkbox" id="collboxSH" onchange="collSH()">
             <label for="collboxSH">Collisionbox</label> <br>
-            <input type="checkbox" id="hurtboxSH" value="show" onchange="hurtSH()" checked>
+            <input type="checkbox" id="hurtboxSH" onchange="hurtSH()" checked>
             <label for="hurtboxSH">Hurtbox</label> <br>
-            <input type="checkbox" id="hitboxSH" value="show" onchange="hitSH()" checked>
-            <label for="hitboxSH">Hitbox</label>
+            <input type="checkbox" id="hitboxSH" onchange="hitSH()" checked>
+            <label for="hitboxSH">Hitbox</label> <br>
+            <input type="checkbox" id="extraSpacebtn" onchange="exSpace()">
+            <label for="extraSpacebtn">Extra Space</label>
+          </div>
+        </div>
+      </fieldset>
+
+<!-- EXTRA SPACE -->
+      <fieldset id="extraSpace" style="display: none;">
+        <legend>Extra Space</legend>
+        <div class="flexboxButBigger">
+          <div>
+            <label>Top:</label>
+            <input type="number" value="0" min="0" tep="1" id="EST" size="1" tabindex="1" onchange="updateBG()"><br>
+            <label>Right:</label>
+            <input type="number" value="0" min="0" step="1" id="ESR" size="1" tabindex="1" onchange="updateBG()"><br>
+            <label>Bottom:</label>
+            <input type="number" value="0" min="0" step="1" id="ESB" size="1" tabindex="1" onchange="updateBG()"><br>
+            <label>Left:</label>
+            <input type="number" value="0" min="0" step="1" id="ESL" size="1" tabindex="1" onchange="updateBG()"><br>
           </div>
         </div>
       </fieldset>
     </form>
 
+
 <!-- BUTTONS -->
-      <div class="flexbox">
-        <div>
-          <button class="button" onclick="resetHurt()">Reset Hurt</button>
-          <button class="button" onclick="resetHit()">Reset Hit</button>
-          <button class="button" onclick="resetColl()">Reset Collision</button>
-        </div>
-        <div>
-          <button class="button" onclick="drawHurt()">Draw Hurt</button>
-          <button class="button" onclick="drawHit()">Draw Hit</button>
-          <button class="button" onclick="drawColl()">Draw Collision</button>
-        </div>
-        <div>
-          <button class="button" onclick="clearHurt()">Clear Hurt</button>
-          <button class="button" onclick="clearHit()">Clear Hit</button>
-          <button class="button" onclick="clearColl()">Clear Collision</button>
-        </div>
+    <div class="flexbox">
+      <div>
+        <button class="button" onclick="resetHurt()">Reset Hurt</button>
+        <button class="button" onclick="resetHit()">Reset Hit</button>
+        <button class="button" onclick="resetColl()">Reset Collision</button>
+      </div>
+      <div>
+        <button class="button" onclick="drawHurt()">Draw Hurt</button>
+        <button class="button" onclick="drawHit()">Draw Hit</button>
+        <button class="button" onclick="drawColl()">Draw Collision</button>
+      </div>
+      <div>
+        <button class="button" onclick="clearHurt()">Clear Hurt</button>
+        <button class="button" onclick="clearHit()">Clear Hit</button>
+        <button class="button" onclick="clearColl()">Clear Collision</button>
       </div>
     </div>
+  </div>
 
 <!-- COLLISIONBOX -->
     <form id="collisionbox" style="display: none;">
