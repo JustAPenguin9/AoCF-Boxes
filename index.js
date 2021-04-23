@@ -294,7 +294,7 @@ function draw() {
 }
 
 document.addEventListener("keyup", (e) => {
-  if (e.code == "Enter") {
+  if (e.key == "Enter") {
     draw();
   }
 })
