@@ -178,7 +178,6 @@ function drawColl() {
     document.getElementById("xOffset27").value,
     document.getElementById("yOffset27").value
   )
-  console.log("Drew collisionboxes");
 }
 
 function drawHurt() {
@@ -231,7 +230,6 @@ function drawHurt() {
     document.getElementById("xOffset7").value,
     document.getElementById("yOffset7").value
   )
-  console.log("Drew hurtboxes");
 }
 
 function drawHit() {
@@ -284,20 +282,8 @@ function drawHit() {
     document.getElementById("xOffset17").value,
     document.getElementById("yOffset17").value
   )
-  console.log("Drew hitboxes");
 }
 
-function draw() {
-  drawHit();
-  drawHurt();
-  drawColl()
-}
-
-document.addEventListener("keyup", (e) => {
-  if (e.key == "Enter") {
-    draw();
-  }
-})
 
 ///RESET
 function resetColl() {
@@ -335,8 +321,6 @@ function resetColl() {
   document.getElementById("h27").value = null;
   document.getElementById("xOffset27").value = null;
   document.getElementById("yOffset27").value = null;
-
-  console.log("Reset Collision");
 }
 
 function resetHurt() {
@@ -374,8 +358,6 @@ function resetHurt() {
   document.getElementById("h7").value = null;
   document.getElementById("xOffset7").value = null;
   document.getElementById("yOffset7").value = null;
-
-  console.log("Reset Hurt");
 }
 
 function resetHit() {
@@ -413,12 +395,87 @@ function resetHit() {
   document.getElementById("h17").value = null;
   document.getElementById("xOffset17").value = null;
   document.getElementById("yOffset17").value = null;
+}
 
-  console.log("Reset Hit");
+
+function draw() {
+  drawHit();
+  drawHurt();
+  drawColl();
+  console.log("drew all")
 }
 
 function reset() {
   resetHurt();
   resetHit();
   resetColl();
+  console.log("reset all")
 }
+
+/// KEYBINDS
+document.addEventListener("keyup", (e) => {
+  if (e.key == "Enter" || e.key == "r") {
+    draw();
+  }
+})
+
+document.addEventListener("keyup", (e) => {
+  if (e.key == "f") {
+    clear();
+  }
+})
+
+document.addEventListener("keyup", (e) => {
+  if (e.key == "Enter" && e.shiftKey == true || e.key == "v") {
+    reset();
+  }
+})
+
+//draw
+document.addEventListener("keyup", (e) => {
+  if (e.key == "q") {
+    drawColl();
+  }
+})
+document.addEventListener("keyup", (e) => {
+  if (e.key == "a") {
+    drawHurt();
+  }
+})
+document.addEventListener("keyup", (e) => {
+  if (e.key == "z") {
+    drawHit();
+  }
+})
+//clear
+document.addEventListener("keyup", (e) => {
+  if (e.key == "w") {
+    clearColl();
+  }
+})
+document.addEventListener("keyup", (e) => {
+  if (e.key == "s") {
+    clearHurt();
+  }
+})
+document.addEventListener("keyup", (e) => {
+  if (e.key == "x") {
+    clearHit();
+  }
+})
+//reset
+document.addEventListener("keyup", (e) => {
+  if (e.key == "e") {
+    resetColl();
+  }
+})
+document.addEventListener("keyup", (e) => {
+  if (e.key == "d") {
+    resetHurt();
+  }
+})
+document.addEventListener("keyup", (e) => {
+  if (e.key == "c") {
+    resetHit();
+  }
+})
