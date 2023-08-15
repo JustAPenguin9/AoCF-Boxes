@@ -2,7 +2,7 @@
 
 Web app made to draw the hitboxes and hurtboxes for *Touhou Hyouibana ~ Antinomy of Common Flowers* developed by Tasofro.
 
-## ⚠️ THIS HAS BEEN REPACED BY [BOXES 2](https://github.com/JustAPenguin9/AoCF-Boxes-2) ⚠️
+## ⚠️ THIS HAS BEEN REPLACED BY [BOXES 2](https://github.com/JustAPenguin9/AoCF-Boxes-2) ⚠️
 please use that instead
 
 ## To use
